@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/readme/hero.gif" width="100%" alt="Build a synthetic-query index once; retrieve skills with dense vectors at query time. Conceptual overview.">
+  <img src="./assets/readme/hero.gif" width="100%" alt="部署网站的真实 README 问题，经合成问法构建的索引映射到部署技能；索引条目为机制示例。">
 </p>
 
 # SynCRAG-skill

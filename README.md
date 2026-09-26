@@ -1,18 +1,12 @@
+<p align="center">
+  <img src="./assets/readme/hero.gif" width="100%" alt="Build a synthetic-query index once; retrieve skills with dense vectors at query time. Conceptual overview.">
+</p>
 
-<h1 align="center">
-  <br>
-  <img src="https://img.shields.io/badge/SkillGraph-1B365D?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzFCMzY1RCIvPjx0ZXh0IHg9IjUwIiB5PSI2NSIgZm9udC1zaXplPSI1NSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIj5TPC90ZXh0Pjwvc3ZnPg==&logoColor=white" alt="SkillGraph">
-  <br>
-  SkillGraph
-  <br>
-  <a href="https://arxiv.org/abs/2604.xxxxx"><img src="https://img.shields.io/badge/arXiv-cs.AI%20%7C%20cs.IR-1B365D?style=flat-square&logo=arxiv&logoColor=white" alt="arXiv"></a>
-  <a href="https://github.com/EricLeeK/SynCRAG-skill"><img src="https://img.shields.io/badge/GitHub-SynCRAG--skill-1B365D?style=flat-square&logo=github&logoColor=white" alt="GitHub"></a>
-  <a href="https://github.com/EricLeeK/SynCRAG-skill/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-1B365D?style=flat-square" alt="License"></a>
-  <br>
-  <img src="https://img.shields.io/badge/Python-3.12+-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Framework-FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI">
-  <img src="https://img.shields.io/badge/Embedding-all--MiniLM--L6--v2-FF6F00?style=flat-square" alt="Embedding">
-</h1>
+# SynCRAG-skill
+
+A skill-retrieval research project: generate synthetic user queries when building the index, then rank skills with dense vectors at runtime. The Python API retains the `SkillGraph` name.
+
+**Explore:** [index builder](scripts/build_multi_vector_index.py) · [evaluation](evals/eval_multi_vector.py) · [Python package](skill_graph/)
 
 > **LLM-for-Index, Zero-Token Runtime**: One-time semantic reconstruction for scalable skill retrieval in LLM agents.
 
@@ -20,9 +14,9 @@
 
 ## TL;DR
 
-- <span style="color:#1B365D">**</span> **Problem**: 34,396 real-world skill descriptions are **semantically incomplete**---written in function-oriented language, while users query in task-oriented language.
-- <span style="color:#1B365D">**</span> **Solution**: LLM generates 10 diverse synthetic user queries per skill, building a **multi-vector index** that bridges the semantic gap.
-- <span style="color:#1B365D">**</span> **Result**: **71.0% Recall@10** at **22 ms** with **zero runtime tokens**, surpassing UCSB Agentic (68.3%, ~seconds, ~5K tokens).
+- **Problem**: 34,396 real-world skill descriptions are **semantically incomplete**---written in function-oriented language, while users query in task-oriented language.
+- **Solution**: LLM generates 10 diverse synthetic user queries per skill, building a **multi-vector index** that bridges the semantic gap.
+- **Result**: **71.0% Recall@10** at **22 ms** with **zero runtime tokens**, surpassing UCSB Agentic (68.3%, ~seconds, ~5K tokens).
 
 ---
 
@@ -38,9 +32,9 @@ A real example from our dataset:
 
 This is not a vocabulary problem---it's a **pragmatic distributional mismatch**. Skill descriptions across the entire ecosystem share three structural deficiencies:
 
-1. <span style="color:#1B365D">**</span> **Function-oriented, not task-oriented**: Explain what the tool does technically, not what problems it solves.
-2. <span style="color:#1B365D">**</span> **Template-like and homogeneous**: Similar patterns limit coverage of diverse user expressions.
-3. <span style="color:#1B365D">**</span> **Missing usage scenarios**: Critical context like "when a new team member joins" is entirely absent.
+1. **Function-oriented, not task-oriented**: Explain what the tool does technically, not what problems it solves.
+2. **Template-like and homogeneous**: Similar patterns limit coverage of diverse user expressions.
+3. **Missing usage scenarios**: Critical context like "when a new team member joins" is entirely absent.
 
 ---
 
@@ -103,7 +97,9 @@ uvicorn skill_graph.api.server:app --reload
 
 ---
 
-## Evaluation Results
+## Repository-reported evaluation
+
+These are the evaluation figures documented by this repository. Consult the evaluation scripts, dataset configuration, and original experiment records when reproducing or comparing them.
 
 ### SkillsBench (87 tasks on 34,396 UCSB skills)
 
@@ -157,16 +153,9 @@ This creates a natural division of labor: **platforms invest in semantic quality
 
 ---
 
-## Citation
+## Research manuscript
 
-```bibtex
-@article{li2026skillgraph,
-  title={LLM-for-Index, Zero-Token Runtime: One-Time Semantic Reconstruction for Scalable Skill Retrieval in LLM Agents},
-  author={Li, Shiyao and Zhang, Jiale},
-  journal={arXiv preprint arXiv:2604.xxxxx},
-  year={2026}
-}
-```
+Manuscript sources are in [`paper/`](paper/). A verified publication identifier has not been provided.
 
 ---
 
@@ -177,4 +166,11 @@ This creates a natural division of labor: **platforms invest in semantic quality
 
 ## License
 
-MIT License. See [LICENSE](LICENSE) for details.
+MIT License.
+
+<details>
+<summary>Static overview</summary>
+
+[Open the static SVG](./assets/readme/hero.svg).
+
+</details>
